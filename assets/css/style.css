@@ -1,0 +1,31 @@
+.jumbotron {
+    background-color: rgb(187, 118, 156);
+}
+
+p {
+    background-color: rgb(123, 105, 172);
+    border-radius: 2px;
+    margin-left: 0px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.card-body {
+    border: 2px solid rgb(123, 105, 172);
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin: 20px ;
+}
+
+.btn {
+    margin-left: 20px;
+    background-color: rgb(123, 105, 172);
+}
+
+table {
+    margin-left: 20px;
+}

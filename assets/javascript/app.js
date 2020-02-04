@@ -10,6 +10,11 @@ let destination = "";
 let firstTrainTime = 0;
 let frequency = 0;
 
+let firstTimeConverted =0;
+let tRemainder=0;
+
+
+
 $("#submit").on("click", function (event) {
     event.preventDefault();
     trainName = $("#trainName-input").val().trim();
@@ -22,9 +27,15 @@ $("#submit").on("click", function (event) {
         destination: destination,
         firstTrainTime: firstTrainTime,
         frequency: frequency,
-        //dateAdded: firebase.database.ServerValue.TIMESTAMP
     });
+
+    /*$("#trainName-input").val("");
+    $("#destination-input").val("");
+    $("#firstTrainTime-input").val("");
+    $("#frequency-input").val("");*/
 });
+
+
 
 database.ref().on("child_added", function (childSnapshot) {
     console.log(childSnapshot.val());
@@ -33,8 +44,37 @@ database.ref().on("child_added", function (childSnapshot) {
     console.log(childSnapshot.val().firstTrainTime);
     console.log(childSnapshot.val().frequency);
 
-    $("#tableBody").text(childSnapshot.val().trainName + "|" + childSnapshot.val().destination + "|" + childSnapshot.val().firstTrainTime + "|" + childSnapshot.val().frequency);
+    firstTimeConverted = moment(firstTrainTime, "HH:mm").subtract(1, "years");
+    console.log(firstTimeConverted);
 
-}, function(errorObject) {
+    var currentTime = moment();
+    console.log("Current Time: " + moment(currentTime).format("hh:mm"));
+
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+    console.log("Difference in Time: " + diffTime);
+
+    tRemainder = diffTime % frequency;
+    console.log(tRemainder);
+
+    var minutesAway = frequency - tRemainder;
+    console.log("Minutes Till Train: " + minutesAway);
+
+    var nextArrival = moment().add(minutesAway, "minutes");
+    console.log("Arrival Time: " + moment(nextArrival).format("hh:mm"));
+
+
+
+
+    let newRow = $("<tr>").append(
+        $("<td>").text(childSnapshot.val().trainName),
+        $("<td>").text(childSnapshot.val().destination),
+        $("<td>").text(childSnapshot.val().frequency),
+        $("<td>").text(childSnapshot.val().nextArrival),
+        $("<td>").text(childSnapshot.val().minutesAway),
+    );
+    $("#scheduleTable > tbody").append(newRow);
+
+}, function (errorObject) {
     console.log("The read failed: " + errorObject.code);
 });
+

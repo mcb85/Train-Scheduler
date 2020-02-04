@@ -29,10 +29,6 @@ $("#submit").on("click", function (event) {
         frequency: frequency,
     });
 
-    $("#trainName-input").val("");
-    $("#destination-input").val("");
-    $("#firstTrainTime-input").val("");
-    $("#frequency-input").val("");
 });
 
 

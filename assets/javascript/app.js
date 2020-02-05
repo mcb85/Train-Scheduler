@@ -14,7 +14,6 @@ let frequency = 0;
 let tRemainder=0;
 
 
-
 $("#submit").on("click", function (event) {
     event.preventDefault();
     trainName = $("#trainName-input").val().trim();
@@ -30,7 +29,6 @@ $("#submit").on("click", function (event) {
     });
 
 });
-
 
 
 database.ref().on("child_added", function (childSnapshot) {

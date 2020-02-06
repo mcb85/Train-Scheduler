@@ -11,7 +11,7 @@ let firstTrainTime = 0;
 let frequency = 0;
 
 
-let tRemainder=0;
+let tRemainder = 0;
 
 
 $("#submit").on("click", function (event) {
@@ -27,7 +27,10 @@ $("#submit").on("click", function (event) {
         firstTrainTime: firstTrainTime,
         frequency: frequency,
     });
-
+$("#trainName-input").val("");
+$("#destination-input").val("");
+$("#firstTrainTime-input").val("");
+$("#frequency-input").val("");
 });
 
 

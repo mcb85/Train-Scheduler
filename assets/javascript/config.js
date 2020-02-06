@@ -1,10 +1,10 @@
 var config = {
-    apiKey: "AIzaSyDMNNbcMv3EOasxuqZSq4aGRbuXe2Z_CsQ",
-    authDomain: "train-scheduler-d5b7d.firebaseapp.com",
-    databaseURL: "https://train-scheduler-d5b7d.firebaseio.com",
-    projectId: "train-scheduler-d5b7d",
-    storageBucket: "train-scheduler-d5b7d.appspot.com",
-    messagingSenderId: "467043104730",
-    appId: "1:467043104730:web:5b6764b457333cdb4072e3",
-    measurementId: "G-S4SLJ2CRX7"
+    apiKey: "AIzaSyADbx2llfU1eLup61YwdYGU1KjmZXsnZIk",
+    authDomain: "train-6ac61.firebaseapp.com",
+    databaseURL: "https://train-6ac61.firebaseio.com",
+    projectId: "train-6ac61",
+    storageBucket: "train-6ac61.appspot.com",
+    messagingSenderId: "330118281380",
+    appId: "1:330118281380:web:ee6c776e5afd4294c34e31",
+    measurementId: "G-G8LS022P10"
 };
